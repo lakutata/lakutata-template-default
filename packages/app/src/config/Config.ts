@@ -3,7 +3,7 @@ import * as process from 'node:process'
 import {BuildEntrypoints} from 'lakutata/com/entrypoint'
 import {SetupServiceEntrypoint} from './SetupServiceEntrypoint'
 import packageJson from '../../package.json'
-// import {ExampleController} from '../controllers/ExampleController'
+import {ExampleController} from '../controllers/ExampleController'
 
 export async function Config(): Promise<ApplicationOptions> {
     return {
@@ -14,7 +14,7 @@ export async function Config(): Promise<ApplicationOptions> {
         components: {
             entrypoint: BuildEntrypoints({
                 controllers: [
-                    // ExampleController
+                    ExampleController
                 ],
                 service: SetupServiceEntrypoint(process.env.MODE === 'development' ? 8081 : undefined)
             })
