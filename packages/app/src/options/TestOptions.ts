@@ -2,6 +2,6 @@ import {DTO, Time} from 'lakutata'
 import {Expect} from 'lakutata/decorator/dto'
 
 export class TestOptions extends DTO {
-    @Expect(DTO.Number().optional().default(() => Time.now()))
+    @Expect(DTO.Number().optional().default(() => Time.now()).description('timestamp'))
     public timestamp: number
 }
