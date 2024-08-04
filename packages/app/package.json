@@ -12,8 +12,7 @@
     "clean": "shx rm -rf ./build",
     "build": "tsc",
     "rebuild": "npm run clean && npm run build",
-    "test": "npm run rebuild && electron --no-sandbox --ignore-connections-limit=localhost --disable-http-cache ./build/tests/App.spec.js",
-    "test:wayland": "npm run rebuild && electron --enable-features=UseOzonePlatform --ozone-platform=wayland --no-sandbox --ignore-connections-limit=localhost --disable-http-cache ./build/tests/App.spec.js"
+    "test": "npm run rebuild && node ./build/tests/App.spec.js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",
